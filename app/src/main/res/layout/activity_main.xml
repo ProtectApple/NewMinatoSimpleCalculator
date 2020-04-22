@@ -23,7 +23,7 @@
                 android:textSize="34sp" />
 
             <Space
-                android:layout_width="1dp"
+                android:layout_width="29dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5" />
 

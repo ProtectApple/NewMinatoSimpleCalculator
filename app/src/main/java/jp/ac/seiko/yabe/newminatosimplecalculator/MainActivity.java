@@ -3,6 +3,7 @@ package jp.ac.seiko.yabe.newminatosimplecalculator;
 //参考サイト
 // https://sites.google.com/a/gclue.jp/android-docs-2009/dian-zhuono-zuo-cheng
 //その他Qiita記事
+//
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     TextView answer;
     TextView shisoku;
 
-    boolean zerostop;
+    boolean zerowait;
     boolean zerogo;
-
+//  boolean zerotime;
     float mValueOne, mValueTwo;
 
     boolean Addition, Subtract, Multiplication, Division;
@@ -51,16 +52,16 @@ public class MainActivity extends AppCompatActivity {
         ShikiText = findViewById(R.id.Loading);
         answer = findViewById(R.id.Answer);
         shisoku = findViewById(R.id.NowText);
-
-        zerostop = true;
+//      zerotime = false;
+        zerowait = true;
         zerogo = true;
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "1");
@@ -71,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "2");
@@ -84,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "3");
@@ -97,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait= true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "4");
@@ -110,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "5");
@@ -123,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "6");
@@ -136,9 +137,9 @@ public class MainActivity extends AppCompatActivity {
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "7");
@@ -149,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "8");
@@ -162,9 +163,9 @@ public class MainActivity extends AppCompatActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 ShikiText.setText(ShikiText.getText() + "9");
@@ -176,15 +177,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ShikiText.setText(ShikiText.getText() + "0");
-                if (zerostop == false) {
+                if (zerowait == false) {
                     ShikiText.setText("");
-                    zerostop = true;
+                    zerowait = true;
 
                 }
                 if (zerogo == false){
 
                 } else  {
-                    zerostop = false;
+                    zerowait = false;
                 }
 
 
@@ -202,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                     Addition = true;
                     ShikiText.setText(null);
                 }
-                zerostop = true;
+                zerowait = true;
                 zerogo = true;
                 shisoku.setText("＋");
             }
@@ -214,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 mValueOne = Float.parseFloat(ShikiText.getText() + "");
                 Subtract = true;
                 ShikiText.setText(null);
-                zerostop = true;
+                zerowait = true;
                 zerogo = true;
                 shisoku.setText("－");
             }
@@ -226,8 +227,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mValueOne = Float.parseFloat(ShikiText.getText() + "");
                 Multiplication = true;
-                ShikiText.setText(null);
-                zerostop = true;
+                ShikiText.setText(null);//圧倒的None派
+                zerowait = true;
                 zerogo = true;
                 shisoku.setText("×");
             }
@@ -239,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 mValueOne = Float.parseFloat(ShikiText.getText() + "");
                 Division = true;
                 ShikiText.setText(null);
-                zerostop = true;
+                zerowait = true;
                 zerogo = true;
                 shisoku.setText("÷");
             }
@@ -249,36 +250,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(ShikiText.getText() + "");
-
+//足し算
                 if (Addition == true) {
                     answer.setText(mValueOne + mValueTwo + "");
                     Addition = false;
                 }
-
+//引き算
                 if (Subtract == true) {
                     answer.setText(mValueOne - mValueTwo + "");
                     Subtract = false;
                 }
-
+//掛け算
                 if (Multiplication == true) {
                     answer.setText(mValueOne * mValueTwo + "");
                     Multiplication = false;
                 }
-
+//割り算
                 if (Division == true) {
                     answer.setText(mValueOne / mValueTwo + "");
                     Division = false;
                 }
             }
         });
-
+// 初期化
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 ShikiText.setText("");
                 answer.setText("");
-                zerostop = true;
+                zerowait = true;
                 zerogo = true;
                 shisoku.setText("");
             }
